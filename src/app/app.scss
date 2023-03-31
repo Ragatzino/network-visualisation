@@ -1,0 +1,30 @@
+
+
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+    grid-gap: 600px;
+}
+
+.height-container{
+    display: grid;
+  grid-template-rows: 1fr 1fr 3fr;
+  grid-auto-flow: row dense;
+  grid-gap: 150px;
+}
+
+.topnav{
+  background-color: var(--color-darker);
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+}
+.footer{
+  background-color: var(--color-darker);
+  position: fixed;
+  bottom: 0;
+  left:0;
+  width: 100%;
+}
