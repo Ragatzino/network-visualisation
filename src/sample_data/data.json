@@ -1,0 +1,28 @@
+[{
+    "name": "Network1.xxx.org",
+    "nodes":[
+      {
+      "name":"Node 1", 
+      "description": "This is node 1",
+      "detailedDescription": "A detailed description of node 1",
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "name":"Node 2", 
+      "description": "This is node 2",
+      "detailedDescription": "A detailed description of node 1",
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "name":"Node 3", 
+      "description": "This is node 3",
+      "detailedDescription": "A detailed description of node 1",
+      "ipAddress": "127.0.0.1"
+    }
+    ],
+    "links": [
+      { "name": "Link 1", "from": "Node 1", "to": "Node 2", "label":"ouais" },
+      { "name": "Link 2",  "from": "Node 1", "to": "Node 3", "label":"ouais" },
+      { "name": "Link 3",  "from": "Node 2", "to": "Node 3" , "label":"ouais"}]
+  }
+]

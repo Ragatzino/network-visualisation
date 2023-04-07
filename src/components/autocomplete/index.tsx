@@ -8,7 +8,7 @@ interface Props{
 }
 const Autocomplete = ({options,placeholder,setSelected}:Props) => {
   const inputSearchRef = useRef<HTMLInputElement>(null);
-
+  
   useEffect(() => {
     if (inputSearchRef.current) {
       inputSearchRef.current.focus();

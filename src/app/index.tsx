@@ -3,12 +3,14 @@ import { LightDarkSwitch } from "../components/light-dark";
 import { Autocomplete } from "../components/autocomplete";
 import { Title } from "../components/title";
 import "./app.scss";
-import { Graph } from "../components/graph";
+import GraphWrapper from "../pages/graph-wrapper";
+import { Network } from "network";
+import data from "../sample_data/data.json";
 
-const data=[]
 const App = () =>  {
-  const [selected,setSelected] = React.useState("")
-  console.log("selected " +selected)
+  const availableNetworks:Network[]=data
+  const [selectedNetwork,setSelectedNetwork] = React.useState<Network|undefined|null>(undefined)
+  console.log(selectedNetwork)
   return (
     <>
     <div className="topnav">
@@ -20,13 +22,10 @@ const App = () =>  {
     <div className="App">
       <div className="height-container">      
       <div className="item">
-      <div><Autocomplete options={["cabron.org","cabronito.com","cabroner.er","donde.es"]} setSelected={setSelected}/></div>
+      <div><Autocomplete options={availableNetworks.map(network => network.name)} setSelected={(networkName) => setSelectedNetwork(availableNetworks.filter(network => networkName === network.name)[0] ?? null)}/></div>
       </div>
-      {selected !== "" && 
-      <div className="item">
-      <div>{selected}</div>
-      <Graph/>
-      </div>
+      {selectedNetwork !== undefined && selectedNetwork !== null && 
+        <GraphWrapper selectedNetwork={selectedNetwork}/>
       }
       </div>
     </div>
